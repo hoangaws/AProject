@@ -40,4 +40,26 @@ Mostly automatic install with react-native
 
 react-native link react-native-charts-wrapper
 
+## Installation immutability-helper
+
+npm install --save immutability-helper
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
