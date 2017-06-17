@@ -44,6 +44,11 @@ react-native link react-native-charts-wrapper
 
 npm install --save immutability-helper
 
+## Installation react-native-splash-screen
+
+npm i react-native-splash-screen --save
+
+react-native link react-native-splash-screen or rnpm link react-native-splash-screen
 
 
 
