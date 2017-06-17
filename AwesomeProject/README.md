@@ -19,6 +19,25 @@ npm i react-native-vector-icons --save && rnpm link react-native-vector-icons
 
 npm i react-native-elements --save
 
+## Installation React Native Charts Wrapper
 
+npm install --save react-native-charts-wrapper
+
+1. Add Maven Repository
+
+android/build.gradle
+
+allprojects {
+    repositories {
+        ...
+
+        maven { url "https://jitpack.io" }    // used for MPAndroidChart
+    }
+}
+2. Add Maven Dependency
+
+Mostly automatic install with react-native
+
+react-native link react-native-charts-wrapper
 
 
