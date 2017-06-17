@@ -7,7 +7,8 @@ import {
   processColor
 } from 'react-native';
 import update from 'immutability-helper';
-import {RadarChart} from 'react-native-charts-wrapper';
+import { RadarChart } from 'react-native-charts-wrapper';
+import SplashScreen from 'react-native-splash-screen';
 
 
 class RadarChartScreen extends React.Component {
@@ -27,12 +28,14 @@ class RadarChartScreen extends React.Component {
   }
 
   componentDidMount() {
+    SplashScreen.hide();
+
     this.setState(
       update(this.state, {
         data: {
           $set: {
             dataSets: [{
-              values: [{value: 100}, {value: 110}, {value: 105}, {value: 115}, {value: 110}],
+              values: [{ value: 100 }, { value: 110 }, { value: 105 }, { value: 115 }, { value: 110 }],
               label: 'DS 1',
               config: {
                 color: processColor('#FF8C9D'),
@@ -43,7 +46,7 @@ class RadarChartScreen extends React.Component {
                 lineWidth: 2
               }
             }, {
-              values: [{value: 115}, {value: 100}, {value: 105}, {value: 110}, {value: 120}],
+              values: [{ value: 115 }, { value: 100 }, { value: 105 }, { value: 110 }, { value: 120 }],
               label: 'DS 2',
               config: {
                 color: processColor('#C0FF8C'),
@@ -54,7 +57,7 @@ class RadarChartScreen extends React.Component {
                 lineWidth: 1.5
               }
             }, {
-              values: [{value: 105}, {value: 115}, {value: 121}, {value: 110}, {value: 105}],
+              values: [{ value: 105 }, { value: 115 }, { value: 121 }, { value: 110 }, { value: 105 }],
               label: 'DS 3',
               config: {
                 color: processColor('#8CEAFF'),
@@ -77,17 +80,17 @@ class RadarChartScreen extends React.Component {
   handleSelect(event) {
     let entry = event.nativeEvent
     if (entry == null) {
-      this.setState({...this.state, selectedEntry: null})
+      this.setState({ ...this.state, selectedEntry: null })
     } else {
-      this.setState({...this.state, selectedEntry: JSON.stringify(entry)})
+      this.setState({ ...this.state, selectedEntry: JSON.stringify(entry) })
     }
   }
 
   render() {
     return (
-      <View style={{flex: 1}}>
+      <View style={{ flex: 1 }}>
 
-        <View style={{height:80}}>
+        <View style={{ height: 80 }}>
           <Text> selected entry</Text>
           <Text> {this.state.selectedEntry}</Text>
         </View>
@@ -97,7 +100,7 @@ class RadarChartScreen extends React.Component {
             style={styles.chart}
             data={this.state.data}
             xAxis={this.state.xAxis}
-            description={{text: ''}}
+            description={{ text: '' }}
             legend={this.state.legend}
             skipWebLineCount={1}
             onSelect={this.handleSelect.bind(this)}
