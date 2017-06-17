@@ -45,8 +45,9 @@ react-native link react-native-charts-wrapper
 npm install --save immutability-helper
 
 
+## react-navigation
 
-
+npm install --save react-navigation
 
 
 
