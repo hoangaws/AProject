@@ -3,10 +3,11 @@ import {
     Text,
     View,
     TouchableOpacity,
-    TextInput
+    TextInput,
+    Alert
 } from 'react-native';
 import SplashScreen from 'react-native-splash-screen';
-
+import { firebaseApp } from './FirebaseConfig.js';
 
 export default class Login extends Component {
 
@@ -16,6 +17,37 @@ export default class Login extends Component {
             email: '',
             password: ''
         }
+    }
+
+    dangnhap() {
+        const { navigate } = this.props.navigation;
+        firebaseApp.auth().signInWithEmailAndPassword(this.state.email, this.state.password)
+            .then(() => {
+                Alert.alert(
+                    'Alert Title',
+                    'Đăng nhập thành công ' + this.state.email,
+                    [
+                        { text: 'Cancel', onPress: () => console.log('Cancel Pressed'), style: 'cancel' },
+                        { text: 'OK', onPress: () => navigate('Welcome_Screens')  },
+                    ],
+                    { cancelable: false }
+                )
+                this.setState({
+                    email: '',
+                    password: ''
+                })
+            })
+            .catch(function (error) {
+                Alert.alert(
+                    'Alert Title',
+                    'Đăng nhập thất bại',
+                    [
+                        { text: 'Cancel', onPress: () => console.log('Cancel Pressed'), style: 'cancel' },
+                        { text: 'OK', onPress: () => console.log('OK Pressed') },
+                    ],
+                    { cancelable: false }
+                )
+            });
     }
 
     render() {
@@ -35,7 +67,7 @@ export default class Login extends Component {
                 />
                 <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                     <TouchableOpacity style={{ backgroundColor: 'red' }}
-                        onPress={() => navigate('Login_Screens')} >
+                        onPress={() => { this.dangnhap() }} >
                         <Text style={{ color: 'white' }}>
                             Login
                     </Text>
