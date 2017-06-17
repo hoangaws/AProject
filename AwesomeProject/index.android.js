@@ -5,12 +5,12 @@ import {
   Text,
   View
 } from 'react-native';
-import {Routers} from './react_native_element/Routers.js';
+import {RouterApp} from './Components/RouterApp.js';
 
 export default class AwesomeProject extends Component {
   render() {
     return (
-      <Routers />
+      <RouterApp />
     );
   }
 }
