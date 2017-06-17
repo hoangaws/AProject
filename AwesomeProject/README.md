@@ -50,7 +50,43 @@ npm i react-native-splash-screen --save
 
 react-native link react-native-splash-screen or rnpm link react-native-splash-screen
 
+Third step(Plugin Configuration):
 
+Android:
+
+Update the MainActivity.java to use react-native-splash-screen via the following changes:
+
+import android.os.Bundle;
+import com.facebook.react.ReactActivity;
+import com.cboy.rn.splashscreen.SplashScreen; // here
+
+public class MainActivity extends ReactActivity {
+   @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        SplashScreen.show(this);  // here
+        super.onCreate(savedInstanceState);
+    }
+    // ...other code
+}
+iOS:
+
+Update AppDelegate.m with the following additions:
+
+#import "AppDelegate.h"
+#import "RCTRootView.h"
+#import "SplashScreen.h"  // here
+
+@implementation AppDelegate
+
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
+    // ...other code
+
+    [SplashScreen show];  // here
+    return YES;
+}
+
+@end
 
 
 
