@@ -7,6 +7,8 @@ import Screen_A from './Screen_A.js';
 import Screen_B from './Screen_B.js';
 import Screen_C from './Screen_C.js';
 import Screen_D from './Screen_D.js';
+import RadarChartScreen from './RadarChartScreen.js';
+import SplashScreen from 'react-native-splash-screen';
 
 class App extends Component {
 
@@ -35,6 +37,10 @@ class App extends Component {
         console.log('selectedTab');
         this.setState({ selectedTab })
         // navigate('Test_Screens');
+    }
+
+     componentDidMount() {
+    SplashScreen.hide();
     }
 
     render() {
@@ -119,7 +125,7 @@ class App extends Component {
                     renderSelectedIcon={() => <Icon color={'#6296f9'} name='create' size={30} />}
                     onPress={() => this.changeTab('manhinhA')}>
 
-                    <Screen_A />
+                    <RadarChartScreen />
                 </Tab>
                 <Tab
                     titleStyle={{ fontWeight: 'bold', fontSize: 10 }}
@@ -238,6 +244,8 @@ class App extends Component {
             </Tabs >
         )
     }
+
+
 
 }
 

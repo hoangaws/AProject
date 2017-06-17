@@ -1,5 +1,7 @@
 package com.awesomeproject;
 
+import android.os.Bundle;
+import com.cboy.rn.splashscreen.SplashScreen;
 import com.facebook.react.ReactActivity;
 import com.oblador.vectoricons.VectorIconsPackage;
 
@@ -12,5 +14,11 @@ public class MainActivity extends ReactActivity {
     @Override
     protected String getMainComponentName() {
         return "AwesomeProject";
+    }
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        SplashScreen.show(this,true);
+        super.onCreate(savedInstanceState);
     }
 }
