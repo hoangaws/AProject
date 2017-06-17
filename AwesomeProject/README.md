@@ -49,6 +49,11 @@ npm install --save immutability-helper
 
 npm install --save react-navigation
 
+## react-native-admob
+
+npm i react-native-admob -S
+
+react-native link
 
 
 
