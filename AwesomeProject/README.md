@@ -55,8 +55,10 @@ npm i react-native-admob -S
 
 react-native link
 
+## react native image picker
 
-
+npm install react-native-image-picker@latest --save
+react-native link react-native-image-picker
 
 
 
