@@ -17,6 +17,7 @@ export default class RealtimeDB2 extends Component {
         this.itemRef = firebaseApp.database();
         this.state = {
             dataSource: new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 }),
+            text: ''
         }
     }
 
@@ -25,13 +26,20 @@ export default class RealtimeDB2 extends Component {
         this.itemRef.ref('TrungTamKhoaPham').child('NgonNguLapTrinh')
             .on('child_added', (dataSnapshot) => {
                 items.push({
-                    name: dataSnapshot.val(),
-                    key: dataSnapshot.key
+                    name: dataSnapshot.val().Ngonngu,
+                    _key: dataSnapshot.key
                 });
                 this.setState({
                     dataSource: this.state.dataSource.cloneWithRows(items)
                 });
             });
+        this.itemRef.ref('TrungTamKhoaPham').child('NgonNguLapTrinh')
+            .on('child_removed', (dataSnapshot) => {
+                items = items.filter((x) => x._key !== dataSnapshot.key);
+                this.setState({
+                    dataSource: this.state.dataSource.cloneWithRows(items)
+                })
+            })
     }
 
     render() {
@@ -43,16 +51,46 @@ export default class RealtimeDB2 extends Component {
 
                 <ListView
                     dataSource={this.state.dataSource}
-                    renderRow={(rowData) => 
-                        <View style={{ borderWidth: 1, borderColor: 'gray', margin: 15 }}>
+                    renderRow={(rowData) =>
+                        <TouchableOpacity style={{ borderWidth: 1, borderColor: 'gray', margin: 15 }}
+                            onPress={() => this.removeDB(rowData)} >
                             <Text style={{ color: 'red', fontSize: 30, padding: 15 }}>
                                 {rowData.name}
                             </Text>
-                        </View>
+                        </TouchableOpacity>
                     }
                 />
+
+                <TextInput
+                    style={{ height: 40, width: 350, borderColor: 'gray', borderWidth: 2, padding: 5 }}
+                    onChangeText={(text) => this.setState({ text })}
+                    value={this.state.text}
+                />
+                <TouchableOpacity style={{ backgroundColor: 'green' }}
+                    onPress={() => this.addDB()}
+                >
+                    <Text style={{ color: '#fff', padding: 15, fontSize: 28, textAlign: 'center' }}>
+                        Thêm khóa học
+                    </Text>
+                </TouchableOpacity>
             </View>
         );
+    }
+
+    removeDB(rowData) {
+        this.itemRef.ref('TrungTamKhoaPham').child('NgonNguLapTrinh')
+            .child(rowData._key).remove();
+        this.listemForItems(this.itemRef);// để cho chính máy đó cập nhật lại khi xóa
+    }
+
+    addDB() {
+        this.itemRef.ref('TrungTamKhoaPham').child('NgonNguLapTrinh')
+            .push({
+                Ngonngu: this.state.text
+            });
+        this.setState({
+            text: ''
+        })
     }
 
     componentDidMount() {
