@@ -60,6 +60,11 @@ react-native link
 npm install react-native-image-picker@latest --save
 react-native link react-native-image-picker
 
+## react-native-fetch-blob
+
+npm install --save react-native-fetch-blob
+react-native link react-native-fetch-blob
+RNFB_ANDROID_PERMISSIONS=true react-native link
 
 
 
