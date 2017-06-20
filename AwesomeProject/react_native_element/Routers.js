@@ -6,6 +6,7 @@ import ScreenA from './Screen_A.js';
 import ScreenB from './Screen_B.js';
 import ScreenC from './Screen_C.js';
 import ScreenD from './Screen_D.js';
+import RealmClass from './Realm.js';
 
 export const Routers = StackNavigator(
   {
@@ -16,8 +17,9 @@ export const Routers = StackNavigator(
     B_Screens: { screen: ScreenB },
     C_Screens: { screen: ScreenC },
     D_Screens: { screen: ScreenD },
+    Realm_Screens: { screen: RealmClass },
   },
   {
-    initialRouteName: 'App_Screens',
+    initialRouteName: 'Realm_Screens',
   }
 )
