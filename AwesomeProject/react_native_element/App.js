@@ -11,6 +11,8 @@ import App2 from './App2.js';
 import RadarChartScreen from './RadarChartScreen.js';
 import SplashScreen from 'react-native-splash-screen';
 
+var SQLite = require('react-native-sqlite-storage')
+
 class App extends Component {
 
     static navigationOptions = {
@@ -44,7 +46,45 @@ class App extends Component {
         SplashScreen.hide();
     }
 
+    errorCB(err) {
+        console.log("SQL Error1: " + err);
+    }
+
+    successCB() {
+        console.log("SQL executed fine1");
+    }
+
+    openCB() {
+        console.log("Database OPENED1");
+    }
+
     render() {
+
+        var db = SQLite.openDatabase({ name: "test1", readOnly: true, createFromLocation: "/test1.sqlite" },
+            () => this.openCB(), () => this.successCB());
+
+        db.transaction((tx) => {
+            tx.executeSql('SELECT * FROM peopeo', [], (tx, results) => {
+                console.log("Query completed");
+
+                // Get rows with Web SQL Database spec compliance.
+
+                var len = results.rows.length;
+                for (let i = 0; i < len; i++) {
+                    let row = results.rows.item(i);
+                    console.log(`Employee name: ${row.name}, Dept Name: ${row.age}`);
+                }
+
+                // Alternatively, you can use the non-standard raw method.
+
+                /*
+                  let rows = results.rows.raw(); // shallow copy of rows Array
+          
+                  rows.map(row => console.log(`Employee name: ${row.name}, Dept Name: ${row.deptName}`));
+                */
+            });
+        });
+
         const { selectedTab } = this.state;
         let tabBarStyle = {};
         let sceneStyle = {};
@@ -204,7 +244,7 @@ class App extends Component {
                                 title='Listening' />
                         </ScrollView>
                         <ScrollView>
-                            <List containerStyle={{ marginTop: 0,marginBottom: 55, borderTopWidth: 0, borderBottomWidth: 0, borderBottomColor: 'red' }}>
+                            <List containerStyle={{ marginTop: 0, marginBottom: 55, borderTopWidth: 0, borderBottomWidth: 0, borderBottomColor: 'red' }}>
                                 {
                                     list.map((item, i) => (
                                         <ListItem
@@ -236,7 +276,7 @@ class App extends Component {
 // class  ManHinhA extends Component {
 //     render() {
 //         return(
-            
+
 //         )
 //     }
 // }
