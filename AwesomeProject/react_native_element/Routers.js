@@ -20,6 +20,6 @@ export const Routers = StackNavigator(
     Realm_Screens: { screen: RealmClass },
   },
   {
-    initialRouteName: 'Realm_Screens',
+    initialRouteName: 'App_Screens',
   }
 )

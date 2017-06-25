@@ -1,17 +1,18 @@
 import React, { Component } from 'react';
 import { StyleSheet, ScrollView, View, Alert, Text, Button } from 'react-native';
-import { Icon } from 'react-native-elements';
+import { List, ListItem,Icon  } from 'react-native-elements';
 import {
   AdMobBanner,
 } from 'react-native-admob';
+import { practice } from '../data/lesson1';
 
 class UserDetail extends Component {
 
   static navigationOptions = {
     title: 'Test 123',
     headerTintColor: 'blue',
-    headerRight: <Icon name='settings' color='#517fa4' 
-     size={33} containerStyle={{ flex: 1, justifyContent: 'center', alignItems: 'center' }} />,
+    headerRight: <Icon name='settings' color='#517fa4'
+      size={33} containerStyle={{ flex: 1, justifyContent: 'center', alignItems: 'center' }} />,
   };
 
   constructor(props) {
@@ -45,14 +46,11 @@ class UserDetail extends Component {
           <View style={styles.questions}>
 
             <View style={styles.textQuestions}>
-              <Text>Questions : 1</Text>
-              <Text>ssdswwrwwwwwwssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssswwwds
-              dsdsdwwwwwwwwwcxdssssssssdddddddddd
-              dsdssddddddddddddddc
-              eeeeeeeeeeeeeeeessssssssssssssssseeee
-              ttttttttttttttttttttttttttttt
-              ttttttttttttttttttttttttttttttttxcx
-              rewrefrgeryrtyrtyrtrytyrtyrtyryrt</Text>
+              
+              <Text>{practice[0].id}</Text>
+              <Text>{`${practice[0].name.toUpperCase()} ${practice[0].name.toUpperCase()}`}</Text>
+              <Text>{practice[0].designation}</Text>
+
             </View>
 
             <View style={styles.button}>
@@ -151,6 +149,8 @@ const styles = StyleSheet.create({
     right: 0,
     bottom: 0,
     height: 58,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   footer: {
     position: 'absolute',
