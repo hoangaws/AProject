@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import { StyleSheet, ScrollView, View, Alert, Text, Button } from 'react-native';
-import { List, ListItem,Icon  } from 'react-native-elements';
+import { StyleSheet, ScrollView, View, Alert, Text, Button,TouchableOpacity } from 'react-native';
+import { List, ListItem, Icon } from 'react-native-elements';
 import {
   AdMobBanner,
 } from 'react-native-admob';
-import { practice } from '../data/lesson1';
+import { practice } from '../data/RC1/lesson1';
 
 class UserDetail extends Component {
 
@@ -17,7 +17,11 @@ class UserDetail extends Component {
 
   constructor(props) {
     super(props);
-    this.state = { showText1: false, showText2: false };
+    this.state = {
+      stt: 0,
+      showText1: false,
+      showText2: false
+    };
   }
 
   _onPressButton1() {
@@ -35,8 +39,8 @@ class UserDetail extends Component {
   }
 
   render() {
-    let display1 = this.state.showText1 ? 'Answer1' : '';
-    let display2 = this.state.showText2 ? 'Answer2' : '';
+    let display1 = this.state.showText1 ? `${practice[this.state.stt].ShowExplain}` : '';
+    let display2 = this.state.showText2 ? `${practice[this.state.stt].Tips}` : '';
 
     const { navigate } = this.props.navigation;
 
@@ -46,21 +50,51 @@ class UserDetail extends Component {
           <View style={styles.questions}>
 
             <View style={styles.textQuestions}>
+
+              <Text>Question {practice[this.state.stt].Question} : </Text>
+              <Text>{`${practice[this.state.stt].Content}`}</Text>
               
-              <Text>{practice[0].id}</Text>
-              <Text>{`${practice[0].name.toUpperCase()} ${practice[0].name.toUpperCase()}`}</Text>
-              <Text>{practice[0].designation}</Text>
+
+              <View style={styles.button}>
+                <View style={{ flex: 1 }}>
+                  <Button style={styles.button2}
+                    onPress={() => { this._choose("A") }}
+                    title={practice[this.state.stt].OptionA}
+                  />
+                  <Button style={styles.button2}
+                    onPress={() => { this._choose("B") }}
+                    title={practice[this.state.stt].OptionB}
+                  />
+                  <Button style={styles.button2}
+                    onPress={() => { this._choose("C") }}
+                    title={practice[this.state.stt].OptionC}
+                  />
+                  <Button style={styles.button2}
+                    onPress={() => { this._choose("D") }}
+                    title={practice[this.state.stt].OptionD}
+                  />
+                </View>
+                <View style={{
+                  flex: 1, alignItems: 'center',
+                  justifyContent: 'center'
+                }}>
+                  <Button style={styles.button2}
+                    onPress={() => { this._check(this.state.stt) }}
+                    title={practice[this.state.stt].OptionA}
+                  />
+                </View>
+              </View>
 
             </View>
 
             <View style={styles.button}>
               <Button
                 onPress={() => { this._onPressButton1() }}
-                title="This looks great!"
+                title="ShowExplain"
               />
               <Button
                 onPress={() => { this._onPressButton2() }}
-                title="OK!"
+                title="Tips"
                 color="#841584"
               />
             </View>
@@ -70,35 +104,36 @@ class UserDetail extends Component {
             </View>
 
           </View>
-          <View style={styles.admob}>
-            <AdMobBanner
-              bannerSize="fullBanner"
-              adUnitID="ca-app-pub-7469861277535029/8882938994"
-              testDeviceID="EMULATOR"
-              didFailToReceiveAdWithError={(err) => { console.log("quang cao that bai" + err); }} />
-          </View>
+
         </ScrollView>
+        <View style={styles.admob}>
+          <AdMobBanner
+            bannerSize="fullBanner"
+            adUnitID="ca-app-pub-7469861277535029/8882938994"
+            testDeviceID="EMULATOR"
+            didFailToReceiveAdWithError={(err) => { console.log("quang cao that bai" + err); }} />
+        </View>
         <View style={styles.footer}>
 
           <Icon containerStyle={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}
             name='event-note'
-            color='yellow'
+            color='blue'
             size={33}
             onPress={() => navigate('C_Screens')}
           />
 
           <Icon containerStyle={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}
             name='fast-rewind'
-            color='red'
+            color='blue'
             size={33}
-            onPress={() => console.log('hello1')}
+            onPress={() => this._pre()}
           />
 
           <Icon containerStyle={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}
             name='fast-forward'
-            color='green'
+            color='blue'
             size={33}
-            onPress={() => console.log('hello2')}
+            onPress={() => this._next()}
           />
 
           <Icon containerStyle={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}
@@ -111,6 +146,26 @@ class UserDetail extends Component {
         </View>
       </View>
     );
+  }
+
+  _next() {
+    if (this.state.stt < 51) {
+      this.setState({
+        stt: this.state.stt + 1,
+        showText1: false,
+        showText2: false,
+      });
+    }
+  }
+
+  _pre() {
+    if (this.state.stt > 0) {
+      this.setState({
+        stt: this.state.stt - 1,
+        showText1: false,
+        showText2: false,
+      });
+    }
   }
 
   _close() {
@@ -134,6 +189,10 @@ const styles = StyleSheet.create({
   },
   textQuestions: {
 
+  },
+  button2: {
+    marginTop: 20,
+    justifyContent: 'space-between'
   },
   button: {
     marginTop: 20,
