@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, ScrollView, View, Alert, Text, Button,TouchableOpacity } from 'react-native';
+import { StyleSheet, ScrollView, View, Alert, Text, Button, TouchableOpacity } from 'react-native';
 import { List, ListItem, Icon } from 'react-native-elements';
 import {
   AdMobBanner,
@@ -19,6 +19,8 @@ class UserDetail extends Component {
     super(props);
     this.state = {
       stt: 0,
+      press: "",
+      showCheck: false,
       showText1: false,
       showText2: false
     };
@@ -38,6 +40,10 @@ class UserDetail extends Component {
     });
   }
 
+  _choose(chose) {
+
+  }
+
   render() {
     let display1 = this.state.showText1 ? `${practice[this.state.stt].ShowExplain}` : '';
     let display2 = this.state.showText2 ? `${practice[this.state.stt].Tips}` : '';
@@ -51,37 +57,42 @@ class UserDetail extends Component {
 
             <View style={styles.textQuestions}>
 
-              <Text>Question {practice[this.state.stt].Question} : </Text>
-              <Text>{`${practice[this.state.stt].Content}`}</Text>
-              
+              <Text style={{ fontSize: 18, fontWeight: 'bold' }}>Question {practice[this.state.stt].Question} : </Text>
+              <Text style={{ fontSize: 20, }}>{`${practice[this.state.stt].Content}`}</Text>
+
 
               <View style={styles.button}>
                 <View style={{ flex: 1 }}>
-                  <Button style={styles.button2}
-                    onPress={() => { this._choose("A") }}
-                    title={practice[this.state.stt].OptionA}
-                  />
-                  <Button style={styles.button2}
-                    onPress={() => { this._choose("B") }}
-                    title={practice[this.state.stt].OptionB}
-                  />
-                  <Button style={styles.button2}
-                    onPress={() => { this._choose("C") }}
-                    title={practice[this.state.stt].OptionC}
-                  />
-                  <Button style={styles.button2}
-                    onPress={() => { this._choose("D") }}
-                    title={practice[this.state.stt].OptionD}
-                  />
+
+                  <TouchableOpacity onPress={() => { this._choose("A") }}>
+                    <Text style={{ fontSize: 20, color: "dodgerblue", backgroundColor: "white", }} >(A) {`${practice[this.state.stt].OptionA}`}</Text>
+                  </TouchableOpacity>
+
+                  <TouchableOpacity onPress={() => { this._choose("B") }}>
+                    <Text style={{ fontSize: 20, color: "dodgerblue", backgroundColor: "white", }}>(B) {`${practice[this.state.stt].OptionB}`}</Text>
+                  </TouchableOpacity>
+
+                  <TouchableOpacity onPress={() => { this._choose("C") }}>
+                    <Text style={{ fontSize: 20, color: "dodgerblue", backgroundColor: "white", }}>(C) {`${practice[this.state.stt].OptionC}`}</Text>
+                  </TouchableOpacity>
+
+                  <TouchableOpacity onPress={() => { this._choose("D") }}>
+                    <Text style={{ fontSize: 20, color: "dodgerblue", backgroundColor: "white", }}>(D) {`${practice[this.state.stt].OptionD}`}</Text>
+                  </TouchableOpacity>
+
                 </View>
                 <View style={{
                   flex: 1, alignItems: 'center',
                   justifyContent: 'center'
                 }}>
-                  <Button style={styles.button2}
-                    onPress={() => { this._check(this.state.stt) }}
-                    title={practice[this.state.stt].OptionA}
-                  />
+                  <TouchableOpacity onPress={() => { this._choose("D") }}>
+                    <Icon
+                      reverse
+                      name='ios-color-wand'
+                      type='ionicon'
+                      color='dodgerblue'
+                    />
+                  </TouchableOpacity>
                 </View>
               </View>
 
@@ -105,13 +116,14 @@ class UserDetail extends Component {
 
           </View>
 
-        </ScrollView>
-        <View style={styles.admob}>
           <AdMobBanner
             bannerSize="fullBanner"
             adUnitID="ca-app-pub-7469861277535029/8882938994"
             testDeviceID="EMULATOR"
             didFailToReceiveAdWithError={(err) => { console.log("quang cao that bai" + err); }} />
+        </ScrollView>
+        <View style={styles.admob}>
+
         </View>
         <View style={styles.footer}>
 

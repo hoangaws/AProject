@@ -414,7 +414,10 @@ export const practice = [
         "OptionA": "nearly",
         "OptionB": "off",
         "OptionC": "close",
-        "OptionD": "about"
+        "OptionD": "about",
+        "Translate": "Bà Walters sắp sửa thực hiện 1 bài thuyết trình về làm thế nào để tăng doanh thu khi tôi bước vào phòng.",
+        "ShowExplain": "Cấu trúc: \"be + about + to V1\"  sắp sửa",
+        "Answer": "D"
       },
       {
         "KeyTest": "28",
@@ -424,7 +427,10 @@ export const practice = [
         "OptionA": "favorable",
         "OptionB": "routine",
         "OptionC": "sincere",
-        "OptionD": "recent"
+        "OptionD": "recent",
+        "Translate": "Ông Lee sẽ chăm sóc một số nhiệm vụ thường xuyên, chẳng hạn như sắp xếp 1 số giấy tờ và để tài liệu vào trong tủ.",
+        "Answer": "B",
+        "ExplainB": "routine (a) thói quan, lặp đi lặp lại nhiều lần."
       },
       {
         "KeyTest": "29",
@@ -434,7 +440,10 @@ export const practice = [
         "OptionA": "Due to",
         "OptionB": "While",
         "OptionC": "In that",
-        "OptionD": "In case 130. "
+        "OptionD": "In case 130. ",
+        "Translate": "Bởi vì công việc khó khăn của bà ấy và cam kết với công ty, bà Ramirez được thăng chức người đứng đầu bộ phận quan hệ công chúng.",
+        "ShowExplain": "Due to + N/cụm từ, các câu còn lại cộng mệnh đề -> Chọn (A)",
+        "Answer": "A"
       },
       {
         "KeyTest": "30",
@@ -444,7 +453,11 @@ export const practice = [
         "OptionA": "origin",
         "OptionB": "original",
         "OptionC": "originally",
-        "OptionD": "originated"
+        "OptionD": "originated",
+        "Translate": "Sự phức tạp hoạt động bất ngờ là nghiêm trọng hơn dự kiến ban đầu.",
+        "ShowExplain": "adv + V -> vị trí còn thiếu adv -> chọn (C)",
+        "Answer": "C",
+        "Type": "adv+V"
       },
       {
         "KeyTest": "31",
@@ -454,7 +467,11 @@ export const practice = [
         "OptionA": "rise",
         "OptionB": "arisen",
         "OptionC": "rose",
-        "OptionD": "rising"
+        "OptionD": "rising",
+        "Translate": "Do giá nhiên liệu tăng cao, công ty đã quyết định thêm một khoản phụ phí cho tất cả các người giao hàng.",
+        "ShowExplain": "adj + N,cụm danh từ . Cả B và D đều đóng vai trò tính từ .Nhưng phải dùng ở dạng chủ dộng tức là rising, vì giá dầu ở đây không thể nói là bị tăng được.",
+        "Answer": "D",
+        "Type": "adj+N"
       },
       {
         "KeyTest": "32",
@@ -464,7 +481,10 @@ export const practice = [
         "OptionA": "regularly",
         "OptionB": "quickly",
         "OptionC": "softly",
-        "OptionD": "tiredly"
+        "OptionD": "tiredly",
+        "Translate": "Là đối thủ vcanh5 tranh mạnh nhất của công ty phát hành một dòng mới của quần áo mùa thu,NTR Inc đã hành động nhanh chóng giới thiệu áo khoác da mới",
+        "ShowExplain": "Dịch nghĩa: ",
+        "Answer": "B"
       },
       {
         "KeyTest": "33",
@@ -474,7 +494,11 @@ export const practice = [
         "OptionA": "propose",
         "OptionB": "proposed",
         "OptionC": "proposes",
-        "OptionD": "proposing"
+        "OptionD": "proposing",
+        "Translate": "Các tài liệu kèm theo tóm tắt những thay đổi được đề xuất quy định làm thêm giờ hiện tại.",
+        "ShowExplain": "adj + N -> Chọn B hoặc D ->thay đổi đó là được đề xuất , chứ bản thân nó không được tự đề xuất nên phải chọn B(tính từ có tính chất bị động)",
+        "Answer": "B",
+        "Type": "adj+N"
       },
       {
         "KeyTest": "34",
@@ -484,7 +508,13 @@ export const practice = [
         "OptionA": " In spite of ",
         "OptionB": "Prior to",
         "OptionC": "However",
-        "OptionD": "Yet"
+        "OptionD": "Yet",
+        "Translate": "Mặc dù kiểm tra thường xuyên, nhưng thỉnh thoảng vấn đề hệ thống tình cờ phát sinh.",
+        "Answer": "A",
+        "ExplainA": "In spite of +N :(Mặc dù)",
+        "ExplainB": "Prior to (trước)",
+        "ExplainC": "However (tuy nhiên)",
+        "Vocabulary": "from time to time: thỉnh thoảng, không thường xuyên"
       },
       {
         "KeyTest": "35",
@@ -494,7 +524,10 @@ export const practice = [
         "OptionA": "compare",
         "OptionB": "compared",
         "OptionC": "comparable",
-        "OptionD": "comparing"
+        "OptionD": "comparing",
+        "Translate": "Ứng viên phải là một bậc thầy về quản trị kinh doanh hoặc kinh nghiệm tương đương trong một lĩnh vực liên quan.",
+        "ShowExplain": "Adj + N",
+        "Answer": "C"
       },
       {
         "KeyTest": "36",
@@ -504,7 +537,13 @@ export const practice = [
         "OptionA": "abbreviated",
         "OptionB": "terminated",
         "OptionC": "scheduled",
-        "OptionD": "postponed"
+        "OptionD": "postponed",
+        "Translate": "Hội nghị quảng cáo tuyển dụng được lên kế hoạch cho ngày mai đã được trì hoãn cho đến tuần tới.",
+        "Answer": "D",
+        "ExplainA": "abbreviated : viết tắt",
+        "ExplainB": "terminated : kết thúc",
+        "ExplainC": "scheduled : dự kiến",
+        "ExplainD": "postponed : trì hoãn"
       },
       {
         "KeyTest": "37",
@@ -514,7 +553,10 @@ export const practice = [
         "OptionA": "probabilities",
         "OptionB": "probability",
         "OptionC": "probable",
-        "OptionD": "probably"
+        "OptionD": "probably",
+        "Translate": "Sự mở rộng bảo tàng lịch sử tự nhiên có lẽ là nguyên nhân quan trọng nhất của việc gia tăng doanh thu đáng kể.",
+        "ShowExplain": "Không dùng tính từ ở đó, vì câu đã đầy đủ thành phần. Nên chỉ dùng Adv để bổ nghĩa cho cả câu sau.",
+        "Answer": "D"
       },
       {
         "KeyTest": "38",
@@ -524,7 +566,11 @@ export const practice = [
         "OptionA": "into",
         "OptionB": "throughout",
         "OptionC": "on",
-        "OptionD": "as"
+        "OptionD": "as",
+        "Translate": "Thông tin về các sự kiện xảy ra trong nhà hát trong suốt cả năm là có sẵn thông qua trang web của chúng tôi.",
+        "ShowExplain": "throughout: xuyên suốt, khắp",
+        "Answer": "B",
+        "Tips": "Throughout + the day/month/year,..."
       },
       {
         "KeyTest": "39",
@@ -534,7 +580,9 @@ export const practice = [
         "OptionA": "the other",
         "OptionB": "another",
         "OptionC": "other",
-        "OptionD": "one another"
+        "OptionD": "one another",
+        "Translate": "Thông qua Internet con người khám phá những cách thức mới để chia sẽ thông tin lẫn nhau",
+        "Answer": "D"
       },
       {
         "KeyTest": "40",
@@ -544,7 +592,13 @@ export const practice = [
         "OptionA": "accommodation",
         "OptionB": "policy",
         "OptionC": "handling",
-        "OptionD": "measure"
+        "OptionD": "measure",
+        "Translate": "Thư viện đã công bố một chính sách mới rằng tấ cả những sách mượn phải hoàn trả trong 5 ngày kể từ ngày thanh toán. ",
+        "Answer": "B",
+        "ExplainA": "accommodation ( chỗ ở, sự thỏa hiệp )",
+        "ExplainB": "policy : chính sách",
+        "ExplainC": "handling : cách trình bày, xử lý",
+        "ExplainD": "measure (n) sự đo lường"
       },
       {
         "KeyTest": "41",
@@ -554,7 +608,10 @@ export const practice = [
         "OptionA": "is specializing",
         "OptionB": "specializes",
         "OptionC": "specialize",
-        "OptionD": "specializing"
+        "OptionD": "specializing",
+        "Translate": "Nhà cung cấp Ace, một công ty có trụ sở tại Pari chuyên về cung cấp văn phòng , thông báo lên kế hoạch để chuyển địa điểm trụ sở.",
+        "Answer": "D",
+        "ExplainD": "specializing (a Paris-based firm which specialize in office supplies = a Paris-based firm specializing in office supplies) -> Rút gọn MĐQH chủ động"
       },
       {
         "KeyTest": "42",
@@ -564,7 +621,12 @@ export const practice = [
         "OptionA": "Thus",
         "OptionB": "To the contrary",
         "OptionC": " Despite the fact ",
-        "OptionD": "Furthermore"
+        "OptionD": "Furthermore",
+        "Translate": "Sau nhiều thập kỷ của tiến bộ và phát triển, nhà cung cấp Ace tự cảm thấy cần thêm các tiện nghi.Phòng kho cũng đã được chứa đầy.Hơn thế nữa , số lượng bãi đổ xe cho nhân viên không đủ là một vấn đề khác của công ty.",
+        "Answer": "D",
+        "ExplainA": "Thus : do đó ( khi mệnh đề trước chỉ nguyên nhân , mệnh đề sau chỉ kết quả , mới dùng Thus.)",
+        "ExplainB": "To the contrary: 2 mệnh đề trái ngược nhau",
+        "ExplainC": " Despite the fact : mặc dù ( 1 cấu trúc dùng để chuyển từ although sang despite). "
       },
       {
         "KeyTest": "43",
@@ -574,7 +636,10 @@ export const practice = [
         "OptionA": "way",
         "OptionB": "sent",
         "OptionC": "how",
-        "OptionD": "equal"
+        "OptionD": "equal",
+        "Translate": "Nhưng thách thức quan trọng nhất ở phía trước là làm thế nào để di chuyển nhanh chóng đến trụ sở mới mà không ảnh hưởng đến công việc.",
+        "Answer": "C",
+        "ExplainC": "equal (+ to s.thing/doing s.thing : đủ sức)"
       },
       {
         "KeyTest": "44",
@@ -584,7 +649,12 @@ export const practice = [
         "OptionA": "tool",
         "OptionB": "behavior",
         "OptionC": "content",
-        "OptionD": "reason"
+        "OptionD": "reason",
+        "Answer": "A",
+        "ExplainA": "tool (n) công cụ",
+        "ExplainB": "behavior (n) hành vi",
+        "ExplainC": "content (n) nội dung",
+        "ExplainD": "reason (n) lý do"
       },
       {
         "KeyTest": "45",
@@ -594,7 +664,14 @@ export const practice = [
         "OptionA": "verify",
         "OptionB": "feature",
         "OptionC": "condense",
-        "OptionD": "notify"
+        "OptionD": "notify",
+        "Translate": "Khi có danh sách những ứng viên tiềm năng được nhận. Thì những người headhunter đó sẽ liên hệ với những ứng viên trong danh sách ... và vẫn đảm bảo anh chị vẫn quan tâm công việc đó.",
+        "ShowExplain": "Nghĩa là trước khi có danh sách đó , thì những ứng viên cũng đã xem mô tả công việc rồi mới đang ký . Nên khi người săn đầu người này liên hệ, là để xác minh họ vẫn quan tâm hay không thôi. Chứ không mô tả chi tiết nữa -> A",
+        "Answer": "A",
+        "ExplainA": "verify : xác nhận",
+        "ExplainB": "feature : mô tả",
+        "ExplainC": "condense : ",
+        "ExplainD": "notify (+s.b) -> loại"
       },
       {
         "KeyTest": "46",
@@ -604,7 +681,13 @@ export const practice = [
         "OptionA": "short",
         "OptionB": "shorting",
         "OptionC": "shortened",
-        "OptionD": "shorten"
+        "OptionD": "shorten",
+        "Translate": "Sau quá trình hoàn tất thì danh sách sẽ được rút ngắn lại thành 1 số lượng nhỏ những ứng cử viên quan tâm ...",
+        "Answer": "C",
+        "ExplainA": "short ( vì phía sau có trạng từ \"down\" nên không chọn tính từ )",
+        "ExplainB": "shorting (lừa đảo)",
+        "ExplainC": "shortened ",
+        "ExplainD": "shorten : sau động từ \"to be\" không thể là dộng từ nguyên mẫu"
       },
       {
         "KeyTest": "47",
@@ -614,7 +697,13 @@ export const practice = [
         "OptionA": "aware",
         "OptionB": "eligible",
         "OptionC": "responsible",
-        "OptionD": "qualified"
+        "OptionD": "qualified",
+        "Translate": "Bạn sẽ có trách nhiệm thúc đầy thương hiệu bằng việc phân phát những brochure và mẫu hoặc giới thiệu sản phẩm đến khách hàng tiềm năng.",
+        "Answer": "C",
+        "ExplainA": "aware (+of)",
+        "ExplainB": "eligible(+for: đủ tư cách, thích hợp cho)",
+        "ExplainC": "responsible(+for: chịu trách nhiệm )",
+        "ExplainD": "qualified(+for: đủ trình độ cho)"
       },
       {
         "KeyTest": "48",
@@ -624,17 +713,23 @@ export const practice = [
         "OptionA": "if",
         "OptionB": "given",
         "OptionC": "within",
-        "OptionD": "besides"
+        "OptionD": "besides",
+        "Translate": "Bên cạnh đó cũng tạo ra nhận thức thương hiệu bằng những đặc điểm của sản phẩm.",
+        "Answer": "C"
       },
       {
         "KeyTest": "49",
         "Test": "RC1-01",
         "Question": "149",
-        "Content": "If you apply for this position and it's not available at the time, please be assured that LaDon Talent will retain your application in our files for 60 days. During this time your application will remain available for ------- until opportunities become open",
+        "Content": "If you apply for this position and it's not available at the time, please be assured that LaDon Talent will retain your application in our files for 60 days. During this time your application will remain available for ------- until opportunities become open.",
         "OptionA": "consider",
         "OptionB": "considering",
         "OptionC": "considered",
-        "OptionD": "consideration"
+        "OptionD": "consideration",
+        "Translate": "Trong suốt thời gian này , đơn xin việc của bạn vẫn sẵn sàng cho việc xem xét cho đến khi có cơ hội.",
+        "Answer": "D",
+        "ExplainB": "considering ( giới từ): xét đến , tính đến",
+        "ExplainD": "consideration ( sau giới từ thì Ving/N)"
       },
       {
         "KeyTest": "50",
@@ -644,7 +739,9 @@ export const practice = [
         "OptionA": "advantage",
         "OptionB": "study",
         "OptionC": "purpose",
-        "OptionD": "influence"
+        "OptionD": "influence",
+        "Translate": "Mục đích của bảng ghi nhớ này là để nhân viên biết về chính sách nghỉ bệnh và những trường hợp vắng mặt khác.",
+        "Answer": "C"
       },
       {
         "KeyTest": "51",
@@ -654,7 +751,14 @@ export const practice = [
         "OptionA": "proximity",
         "OptionB": "conclusion",
         "OptionC": "matters",
-        "OptionD": "contents"
+        "OptionD": "contents",
+        "Translate": "Khi nhân viên muốn vắng mặt vì bất kỳ vấn đề cá nhân nào . Nó tùy thuộc vào sự chấp nhận của giám sát lúc đó của họ.",
+        "ShowExplain": "Be subject to: tùy thuộc ",
+        "Answer": "C",
+        "ExplainA": "proximity: Sự gần gũi",
+        "ExplainB": "conclusion : Sự kết luận",
+        "ExplainC": "matters : vấn đề",
+        "ExplainD": "contents : nội dung"
       },
       {
         "KeyTest": "52",
@@ -664,6 +768,8 @@ export const practice = [
         "OptionA": "because",
         "OptionB": "from",
         "OptionC": "due to ",
-        "OptionD": "yet"
+        "OptionD": "yet",
+        "Translate": "Đối với những trường hợp vắng mặt quá mức mà không có lý do chính đáng hoặc bất kỳ sự nghỉ việc nào mà không thông báo trước, thậm chí vì lệnh hầu tòa hay nhập ngũ, họ sẽ nhận được văn bản cảnh cáo.",
+        "Answer": "C"
       }
     ];
