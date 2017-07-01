@@ -1,30 +1,19 @@
 import React, { Component } from 'react';
 import { StyleSheet, ScrollView, View, Alert, Text, Button, TouchableOpacity } from 'react-native';
 import { List, ListItem, Icon } from 'react-native-elements';
+import { connect } from 'react-redux';
 
-
-export default class TestFooter extends Component {
-
-    constructor(props) {
-        super(props);
-        this.state = {
-            stt: 0,
-        };
-    }
+class TestFooter extends Component {
 
     _next() {
-        if (this.state.stt < 51) {
-            this.setState({
-                stt: this.state.stt + 1,
-            });
+        if (this.props.stt < 51) {
+            this.props.dispatch({ type: 'NEXT' });
         }
     }
 
     _pre() {
-        if (this.state.stt > 0) {
-            this.setState({
-                stt: this.state.stt - 1,
-            });
+        if (this.props.stt > 0) {
+            this.props.dispatch({ type: 'PRE' });
         }
     }
 
@@ -33,32 +22,31 @@ export default class TestFooter extends Component {
     }
 
     render() {
-
         return (
-            <View style={styles1.footer}>
+            <View style={styles.footer}>
 
-                <Icon containerStyle={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}
+                <Icon containerStyle={styles.button}
                     name='event-note'
                     color='blue'
                     size={33}
                     onPress={() => navigate('C_Screens')}
                 />
 
-                <Icon containerStyle={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}
+                <Icon containerStyle={styles.button}
                     name='fast-rewind'
                     color='blue'
                     size={33}
                     onPress={() => this._pre()}
                 />
 
-                <Icon containerStyle={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}
+                <Icon containerStyle={styles.button}
                     name='fast-forward'
                     color='blue'
                     size={33}
                     onPress={() => this._next()}
                 />
 
-                <Icon containerStyle={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}
+                <Icon containerStyle={styles.button}
                     name='playlist-add-check'
                     color='blue'
                     size={33}
@@ -71,7 +59,15 @@ export default class TestFooter extends Component {
 }
 
 
-const styles1 = StyleSheet.create({
+function mapStateToProps(state) {
+    return {
+        stt: state.stt,
+    };
+}
+export default connect(mapStateToProps)(TestFooter);
+
+
+const styles = StyleSheet.create({
     footer: {
         position: 'absolute',
         flex: 0.1,
@@ -85,5 +81,10 @@ const styles1 = StyleSheet.create({
         justifyContent: 'center',
         borderWidth: 1,
         borderColor: '#949090'
+    },
+    button: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center'
     }
 })

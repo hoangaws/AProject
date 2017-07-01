@@ -8,6 +8,48 @@ import { practice } from '../data/RC1/lesson1';
 import TestFooter from './TestFooter';
 import TestContent from './TestContent';
 
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
+
+const defaultState = {
+  stt: 0,
+  showCheck: false,
+  showExplain: false,
+  showDiscuss: false,
+  showTextExplain1: false,
+  showTextExplain2: false
+};
+
+const reducer = (state = defaultState, action) => {
+  if (action.type === 'CLICK_CHECK') return {
+    stt: state.stt, showCheck: !state.showCheck, showExplain: !state.showExplain,
+    showDiscuss: !state.showDiscuss, showTextExplain1: state.showTextExplain1, showTextExplain2: state.showTextExplain2
+  };
+  if (action.type === 'CLICK_CHOOSE') return {
+    stt: state.stt, showCheck: true, showExplain: state.showExplain,
+    showDiscuss: state.showDiscuss, showTextExplain1: state.showTextExplain1, showTextExplain2: state.showTextExplain2
+  };
+  if (action.type === 'CLICK_SHOW') return {
+    stt: state.stt, showCheck: state.showCheck, showExplain: state.showExplain,
+    showDiscuss: state.showDiscuss, showTextExplain1: !state.showTextExplain1, showTextExplain2: false
+  };
+  if (action.type === 'CLICK_TIPS') return {
+    stt: state.stt, showCheck: state.showCheck, showExplain: state.showExplain,
+    showDiscuss: state.showDiscuss, showTextExplain1: false, showTextExplain2: !state.showTextExplain2
+  };
+  if (action.type === 'NEXT') return {
+    stt: state.stt + 1, showCheck: state.showCheck, showExplain: state.showExplain,
+    showDiscuss: state.showDiscuss, showTextExplain1: state.showTextExplain1, showTextExplain2: state.showTextExplain2
+  };
+  if (action.type === 'PRE') return {
+    stt: state.stt - 1, showCheck: state.showCheck, showExplain: state.showExplain,
+    showDiscuss: state.showDiscuss, showTextExplain1: state.showTextExplain1, showTextExplain2: state.showTextExplain2
+  };
+  return state;
+};
+
+const store = createStore(reducer);
+
 class UserDetail extends Component {
 
   static navigationOptions = {
@@ -17,77 +59,16 @@ class UserDetail extends Component {
       size={33} containerStyle={{ flex: 1, justifyContent: 'center', alignItems: 'center' }} />,
   };
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      stt: 0,
-      press: "",
-      showCheck: false,
-      showExplain: false,
-      showDiscuss: false,
-      showTextExplain1: false,
-      showTextExplain2: false
-    };
-  }
-
-  _next() {
-    if (this.state.stt < 51) {
-      this.setState({
-        stt: this.state.stt + 1,
-      });
-    }
-  }
-
-  _pre() {
-    if (this.state.stt > 0) {
-      this.setState({
-        stt: this.state.stt - 1,
-      });
-    }
-  }
-
-  _close() {
-
-  }
-
   render() {
     const { navigate } = this.props.navigation;
 
     return (
-      <View style={styles.mainviewStyle}>
-        <TestContent stt={this.state.stt} />
-        <View style={styles.footer}>
-
-          <Icon containerStyle={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}
-            name='event-note'
-            color='blue'
-            size={33}
-            onPress={() => navigate('C_Screens')}
-          />
-
-          <Icon containerStyle={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}
-            name='fast-rewind'
-            color='blue'
-            size={33}
-            onPress={() => this._pre()}
-          />
-
-          <Icon containerStyle={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}
-            name='fast-forward'
-            color='blue'
-            size={33}
-            onPress={() => this._next()}
-          />
-
-          <Icon containerStyle={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}
-            name='playlist-add-check'
-            color='blue'
-            size={33}
-            onPress={() => console.log('hello3')}
-          />
-
+      <Provider store={store}>
+        <View style={styles.mainviewStyle}>
+          <TestContent />
+          <TestFooter />
         </View>
-      </View>
+      </Provider>
     );
   }
 }
@@ -97,20 +78,6 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'column',
   },
-  footer: {
-    position: 'absolute',
-    flex: 0.1,
-    left: 0,
-    right: 0,
-    bottom: 0,
-    height: 58,
-    backgroundColor: 'white',
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
-    borderWidth: 1,
-    borderColor: '#949090'
-  }
 })
 
 export default UserDetail;

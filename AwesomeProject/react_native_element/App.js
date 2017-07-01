@@ -136,46 +136,8 @@ class App extends Component {
                     renderIcon={() => <Icon containerStyle={{ justifyContent: 'center', alignItems: 'center', marginTop: 12 }} color={'#5e6977'} name='device-hub' size={33} />}
                     renderSelectedIcon={() => <Icon color={'#6296f9'} name='device-hub' size={30} />}
                     onPress={() => this.changeTab('manhinhB')}>
+
                     <View>
-                        <ButtonGroup
-                            onPress={this.updateIndex}
-                            selectedIndex={selectedIndex}
-                            buttons={buttons}
-                            containerStyle={{ height: 20 }} />
-
-                        <List containerStyle={{ marginTop: 20, borderTopWidth: 10, borderBottomWidth: 1, borderBottomColor: 'red' }}>
-                            {
-                                list.map((item, i) => (
-                                    <ListItem
-                                        roundAvatar
-                                        key={i}
-                                        title={item.name}
-                                        badge={{ value: 3, badgeTextStyle: { color: 'orange' }, badgeContainerStyle: { marginTop: -20 } }}
-                                        subtitle={
-                                            <Rating type="heart"
-                                                readonly
-                                                fractions={5}
-                                                startingValue={1.57}
-                                                imageSize={25}
-                                            />}
-                                        avatar={{ uri: item.avatar_url }}
-                                        onPress={() => navigate('Test_Screens')}
-                                    />
-                                ))
-                            }
-                        </List>
-                    </View>
-                </Tab>
-                <Tab
-                    titleStyle={{ fontWeight: 'bold', fontSize: 10 }}
-                    selectedTitleStyle={{ marginTop: -1, marginBottom: 6 }}
-                    selected={selectedTab === 'manhinhC'}
-                    title={selectedTab === 'manhinhC' ? 'Ngữ Pháp' : null}
-                    renderIcon={() => <Icon containerStyle={{ justifyContent: 'center', alignItems: 'center', marginTop: 12 }} color={'#5e6977'} name='content-paste' size={33} />}
-                    renderSelectedIcon={() => <Icon color={'#6296f9'} name='content-paste' size={30} />}
-                    onPress={() => this.changeTab('manhinhC')}>
-
-<View>
                         <ScrollView horizontal={true}>
                             <Button
                                 icon={{ name: 'cached' }}
@@ -191,7 +153,7 @@ class App extends Component {
                                 title='Listening' />
                         </ScrollView>
                         <ScrollView>
-                            <List containerStyle={{ marginTop: 0,marginBottom: 55, borderTopWidth: 0, borderBottomWidth: 0, borderBottomColor: 'red' }}>
+                            <List containerStyle={{ marginTop: 0, marginBottom: 55, borderTopWidth: 0, borderBottomWidth: 0, borderBottomColor: 'red' }}>
                                 {
                                     list.map((item, i) => (
                                         <ListItem
@@ -214,7 +176,57 @@ class App extends Component {
                             </List>
                         </ScrollView>
                     </View>
-                    
+
+                </Tab>
+                <Tab
+                    titleStyle={{ fontWeight: 'bold', fontSize: 10 }}
+                    selectedTitleStyle={{ marginTop: -1, marginBottom: 6 }}
+                    selected={selectedTab === 'manhinhC'}
+                    title={selectedTab === 'manhinhC' ? 'Ngữ Pháp' : null}
+                    renderIcon={() => <Icon containerStyle={{ justifyContent: 'center', alignItems: 'center', marginTop: 12 }} color={'#5e6977'} name='content-paste' size={33} />}
+                    renderSelectedIcon={() => <Icon color={'#6296f9'} name='content-paste' size={30} />}
+                    onPress={() => this.changeTab('manhinhC')}>
+
+                    <View>
+                        <ScrollView horizontal={true}>
+                            <Button
+                                icon={{ name: 'cached' }}
+                                title='Reading RC1' />
+                            <Button
+                                icon={{ name: 'cached' }}
+                                title='Reading RC2' />
+                            <Button
+                                icon={{ name: 'cached' }}
+                                title='Reading RC3' />
+                            <Button
+                                icon={{ name: 'cached' }}
+                                title='Reading RC4' />
+                        </ScrollView>
+                        <ScrollView>
+                            <List containerStyle={{ marginTop: 0, marginBottom: 55, borderTopWidth: 0, borderBottomWidth: 0, borderBottomColor: 'red' }}>
+                                {
+                                    list.map((item, i) => (
+                                        <ListItem
+                                            roundAvatar
+                                            key={i}
+                                            title={item.name}
+                                            badge={{ value: 3, badgeTextStyle: { color: 'orange' }, badgeContainerStyle: { marginTop: -20 } }}
+                                            subtitle={
+                                                <Rating type="heart"
+                                                    readonly
+                                                    fractions={5}
+                                                    startingValue={4}
+                                                    imageSize={25}
+                                                />}
+                                            avatar={{ uri: item.avatar_url }}
+                                            onPress={() => navigate('Test_Screens')}
+                                        />
+                                    ))
+                                }
+                            </List>
+                        </ScrollView>
+                    </View>
+
 
                 </Tab>
 
@@ -227,7 +239,46 @@ class App extends Component {
                     renderSelectedIcon={() => <Icon color={'#6296f9'} name='headset' size={30} />}
                     onPress={() => this.changeTab('manhinhD')}>
 
-                    <App2 />
+                    <View>
+                        <ScrollView horizontal={true}>
+                            <Button
+                                icon={{ name: 'cached' }}
+                                title='Listening LC1' />
+                            <Button
+                                icon={{ name: 'cached' }}
+                                title='Listening LC2' />
+                            <Button
+                                icon={{ name: 'cached' }}
+                                title='Reading LC3' />
+                            <Button
+                                icon={{ name: 'cached' }}
+                                title='Listening LC4' />
+                        </ScrollView>
+                        <ScrollView>
+                            <List containerStyle={{ marginTop: 0, marginBottom: 55, borderTopWidth: 0, borderBottomWidth: 0, borderBottomColor: 'red' }}>
+                                {
+                                    list.map((item, i) => (
+                                        <ListItem
+                                            roundAvatar
+                                            key={i}
+                                            title={item.name}
+                                            badge={{ value: 3, badgeTextStyle: { color: 'orange' }, badgeContainerStyle: { marginTop: -20 } }}
+                                            subtitle={
+                                                <Rating type="heart"
+                                                    readonly
+                                                    fractions={5}
+                                                    startingValue={4}
+                                                    imageSize={25}
+                                                />}
+                                            avatar={{ uri: item.avatar_url }}
+                                            onPress={() => navigate('Test_Screens')}
+                                        />
+                                    ))
+                                }
+                            </List>
+                        </ScrollView>
+                    </View>
+
                 </Tab>
             </Tabs >
         )
