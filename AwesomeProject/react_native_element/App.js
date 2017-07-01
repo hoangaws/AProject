@@ -23,7 +23,7 @@ class App extends Component {
     constructor() {
         super()
         this.state = {
-            selectedTab: 'manhinhA',
+            selectedTab: 'manhinhC',
             hideTabBar: false,
         }
     }
@@ -175,20 +175,7 @@ class App extends Component {
                     renderSelectedIcon={() => <Icon color={'#6296f9'} name='content-paste' size={30} />}
                     onPress={() => this.changeTab('manhinhC')}>
 
-                    <App2 />
-
-                </Tab>
-
-                <Tab
-                    titleStyle={{ fontWeight: 'bold', fontSize: 10 }}
-                    selectedTitleStyle={{ marginTop: -1, marginBottom: 6 }}
-                    selected={selectedTab === 'manhinhD'}
-                    title={selectedTab === 'manhinhD' ? 'Luyện tập' : null}
-                    renderIcon={() => <Icon containerStyle={{ justifyContent: 'center', alignItems: 'center', marginTop: 12 }} color={'#5e6977'} name='headset' size={33} />}
-                    renderSelectedIcon={() => <Icon color={'#6296f9'} name='headset' size={30} />}
-                    onPress={() => this.changeTab('manhinhD')}>
-
-                    <View>
+<View>
                         <ScrollView horizontal={true}>
                             <Button
                                 icon={{ name: 'cached' }}
@@ -227,18 +214,24 @@ class App extends Component {
                             </List>
                         </ScrollView>
                     </View>
+                    
+
+                </Tab>
+
+                <Tab
+                    titleStyle={{ fontWeight: 'bold', fontSize: 10 }}
+                    selectedTitleStyle={{ marginTop: -1, marginBottom: 6 }}
+                    selected={selectedTab === 'manhinhD'}
+                    title={selectedTab === 'manhinhD' ? 'Luyện tập' : null}
+                    renderIcon={() => <Icon containerStyle={{ justifyContent: 'center', alignItems: 'center', marginTop: 12 }} color={'#5e6977'} name='headset' size={33} />}
+                    renderSelectedIcon={() => <Icon color={'#6296f9'} name='headset' size={30} />}
+                    onPress={() => this.changeTab('manhinhD')}>
+
+                    <App2 />
                 </Tab>
             </Tabs >
         )
     }
 }
-
-// class  ManHinhA extends Component {
-//     render() {
-//         return(
-            
-//         )
-//     }
-// }
 
 export default App;
