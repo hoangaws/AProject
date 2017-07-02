@@ -3,6 +3,7 @@ package com.awesomeproject;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.zmxv.RNSound.RNSoundPackage;
 import io.realm.react.RealmReactPackage;
 import com.cboy.rn.splashscreen.SplashScreenReactPackage;
 import com.oblador.vectoricons.VectorIconsPackage;
@@ -32,6 +33,7 @@ public class MainApplication extends Application implements ReactApplication {
             new VectorIconsPackage(),
             new MPAndroidChartPackage(),
             new RealmReactPackage(),
+            new RNSoundPackage(),
             new RNAdMobPackage()
       );
     }

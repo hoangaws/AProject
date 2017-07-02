@@ -10,6 +10,7 @@ import Screen_D from './Screen_D.js';
 import App2 from './App2.js';
 import RadarChartScreen from './RadarChartScreen.js';
 import SplashScreen from 'react-native-splash-screen';
+import MainView from './MainView.js';
 
 class App extends Component {
 
@@ -239,45 +240,7 @@ class App extends Component {
                     renderSelectedIcon={() => <Icon color={'#6296f9'} name='headset' size={30} />}
                     onPress={() => this.changeTab('manhinhD')}>
 
-                    <View>
-                        <ScrollView horizontal={true}>
-                            <Button
-                                icon={{ name: 'cached' }}
-                                title='Listening LC1' />
-                            <Button
-                                icon={{ name: 'cached' }}
-                                title='Listening LC2' />
-                            <Button
-                                icon={{ name: 'cached' }}
-                                title='Reading LC3' />
-                            <Button
-                                icon={{ name: 'cached' }}
-                                title='Listening LC4' />
-                        </ScrollView>
-                        <ScrollView>
-                            <List containerStyle={{ marginTop: 0, marginBottom: 55, borderTopWidth: 0, borderBottomWidth: 0, borderBottomColor: 'red' }}>
-                                {
-                                    list.map((item, i) => (
-                                        <ListItem
-                                            roundAvatar
-                                            key={i}
-                                            title={item.name}
-                                            badge={{ value: 3, badgeTextStyle: { color: 'orange' }, badgeContainerStyle: { marginTop: -20 } }}
-                                            subtitle={
-                                                <Rating type="heart"
-                                                    readonly
-                                                    fractions={5}
-                                                    startingValue={4}
-                                                    imageSize={25}
-                                                />}
-                                            avatar={{ uri: item.avatar_url }}
-                                            onPress={() => navigate('Test_Screens')}
-                                        />
-                                    ))
-                                }
-                            </List>
-                        </ScrollView>
-                    </View>
+                    <MainView />
 
                 </Tab>
             </Tabs >
